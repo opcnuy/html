@@ -11,6 +11,7 @@
 .message-board {
     width: 100%;
     max-width: 600px;
+    padding-top: 20px;
 }
 h1{
     color: rgba(43, 33, 33);
@@ -23,14 +24,8 @@ h1{
 }
 h2{
     background-color: rgba(136, 136, 191, 0.303);
-    padding: 0 30px 0;
 }
-h3{
-    padding: 0 30px 0;
-}
-p{
-    padding: 0 30px 0;
-}
+
 
 .knowledge{
     background-color: rgb(227, 214, 197);

@@ -36,39 +36,51 @@
             </div>
         </div>
     </nav>
-    <main class="mt-5 pt-5">
-        <!-- 留言板區域 -->
-        <section class="message1">
-            <h1>留言板</h1>
-            <div class="message-board">
-                <form id="messageForm" class="mb-3">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">地點</label>
-                        <input type="text" class="form-control" id="username" placeholder="輸入你的名稱" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">留言</label>
-                        <textarea class="form-control" id="message" rows="3" placeholder="輸入你的留言" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">提交留言</button>
-                </form>
-                
-                <div class="search-bar mb-3">
-                    <input type="text" id="searchInput" class="form-control" placeholder="搜尋關鍵字" oninput="filterMessages()">
+    <main class="container mt-5">
+        <h1>留言板</h1>
+        <div class="message-board">
+            <form id="messageForm" class="mb-3">
+                <div class="mb-3">
+                    <label for="location" class="form-label">地點</label>
+                    <input type="text" class="form-control" id="location" placeholder="輸入地點" required>
                 </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">留言</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="輸入你的留言" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">是否適合打球？</label>
+                    <select id="suitable" class="form-select" required>
+                        <option value="" disabled selected>請選擇</option>
+                        <option value="適合">適合</option>
+                        <option value="不適合">不適合</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">提交留言</button>
+            </form>
 
-                <div id="messageContainer" class="mt-4">
-                    <h3>留言內容</h3>
-                    <ul class="list-group" id="messagesList"></ul>
+            <!-- 搜尋欄位 -->
+            <div class="search-bar mb-3">
+                <input type="text" id="searchInput" class="form-control" placeholder="搜尋關鍵字" oninput="filterMessages()">
+            </div>
+
+            <div id="messageContainer" class="mt-4">
+                <h3>留言內容</h3>
+                <ul class="list-group" id="messagesList"></ul>
+                
+                <!-- 分頁按鈕 -->
+                <div class="pagination-controls mt-3">
+                    <button class="btn btn-secondary" onclick="prevPage()" id="prevButton" disabled>上一頁</button>
+                    <button class="btn btn-secondary" onclick="nextPage()" id="nextButton" disabled>下一頁</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </main>
         <script src="script.js"></script>
         <!-- 嵌入影片區域 -->
-        <section class="video">
-            <iframe class="video-container" width="300" height="185" src="https://www.youtube.com/embed/c66RN87YjNE?si=qSdp--RrDZMzC1zv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </section>
-    </main>
+        <!-- <section class="video"> -->
+            <!-- <iframe class="video-container" width="300" height="185" src="https://www.youtube.com/embed/c66RN87YjNE?si=qSdp--RrDZMzC1zv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        <!-- </section> -->
     <script>
         alert("施工中!!");
     </script>
