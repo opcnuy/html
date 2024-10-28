@@ -1,36 +1,76 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>撲得了球卻撲不進妳心裡</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    <header>    
-        <button class="menu">&#9776;</button>
-        <h1>排氣少年</h1>
-        <ul class="nav">
-            <li><b><a href="小常識.html">小常識</a></b></li>
-            <li><b><a href="其他資訊.html">其他資訊</a></b></li>
-            <li><b><a href="volleyball.html">回首頁</a></b></li>
-        </ul>   
-    </header>
-    <main>
-        <section class="search">
-        <form action="https://www.google.com/search" method="GET">
-            <input type="search" name="query" placeholder="輸入搜尋內容">
-            <button type="submit">搜尋</button>
-        </form>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>撲得了球卻撲不進妳心裡</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <h1>排氣少年</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">排氣少年</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="其他資訊.html">Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="小常識.html">Know</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="mt-5 pt-5">
+        <!-- 留言板區域 -->
+        <section class="message1">
+            <h1>留言板</h1>
+            <div class="message-board">
+                <form id="messageForm" class="mb-3">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">地點</label>
+                        <input type="text" class="form-control" id="username" placeholder="輸入你的名稱" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">留言</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="輸入你的留言" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交留言</button>
+                </form>
+                
+                <div class="search-bar mb-3">
+                    <input type="text" id="searchInput" class="form-control" placeholder="搜尋關鍵字" oninput="filterMessages()">
+                </div>
+
+                <div id="messageContainer" class="mt-4">
+                    <h3>留言內容</h3>
+                    <ul class="list-group" id="messagesList"></ul>
+                </div>
+            </div>
         </section>
-        <hr>
+        <script src="script.js"></script>
+        <!-- 嵌入影片區域 -->
         <section class="video">
-            <iframe width="300" height="185" src="https://www.youtube.com/embed/c66RN87YjNE?si=qSdp--RrDZMzC1zv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </section>
+            <iframe class="video-container" width="300" height="185" src="https://www.youtube.com/embed/c66RN87YjNE?si=qSdp--RrDZMzC1zv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
-        <script>
-            alert("是不是想打排球，颱風要來沒得打QQ");
-        </script>
-        
     </main>
-    <script src="script.js"></script>
-    </body>
+    <script>
+        alert("施工中!!");
+    </script>
+</body>
 </html>

@@ -4,16 +4,12 @@
         <meta charset="UTF-8"/>
         <title>遜咖星期三</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
     </head>
      <header>
-        <button class="menu">&#9776;</button>
-        <button class="back">&#8604;</button>     
-        <h1>小常識</h1>
-        <ul>
-            <li><b><a href="小常識.html">小常識</a></b></li>
-            <li><b><a href="其他資訊.html">其他資訊</a></b></li>
-            <li><b><a href="volleyball.html">回首頁</a></b></li>
-        </ul>   
+        
      </header>
     <body>
         <h3 style="padding-top:80px ;">排球分級表</h3>
@@ -30,6 +26,34 @@
             <p>假如當前是由對面4號位(大砲)扣球，我方2號3號球員會上去進行攔網，如果攔網球員選擇防守直線球，1號位球員就要上前準備接吊球或touch，4號位要準備守3米線附近的吊球或touch，6號位則會退到底線準備守斜線球及攔網touch，5號位則要稍微往右前移動準備守大斜線的扣球及吊球。</p>
             <img src="images/防守站位.png"width="500" height="350" alt="防守站位">
         </section>
+        <!-- 導覽列 -->
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">排氣少年</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                         <a class="nav-link" href="其他資訊.html">Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="小常識.html">Know</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            </nav>
+    
+    
     </body>
 </html>
 
