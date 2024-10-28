@@ -11,12 +11,10 @@
 .message-board {
     width: 100%;
     max-width: 600px;
-    padding-top: 20px;
 }
 h1{
     color: rgba(43, 33, 33);
         position: fixed;
-        top: 10px; /* 距離上方位置，可調整 */
         left: 50%;
         transform: translateX(-50%); /* 使 H1 水平居中 */
         margin: 0;
