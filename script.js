@@ -57,7 +57,7 @@ function displayMessage(location, message, suitable, timestamp) {
         <small>${formattedDate} ${formattedTime}</small>
     `;
 
-    messagesList.appendChild(messageItem);
+    messagesList.prepend(messageItem);
 }
 
 // 搜尋並過濾留言
