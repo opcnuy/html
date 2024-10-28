@@ -37,89 +37,7 @@ h2{
     text-decoration: underline;
 }
 
-.other{
-    padding: 95px 20px 10px;
-    
-}
-.other a{
-    color: rgb(43, 33, 33);
-    text-decoration: none;
-}
-.other a:hover{
-    text-decoration: underline;
-}
-.indoor a{
-    color: rgb(43, 33, 33);
-    text-decoration: none;
-}
-.indoor a:hover{
-    text-decoration: underline;
-}
-.indoor{
-    display: flex;
-    background-color: aliceblue;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 60px 200px 60px;
-}
-.indoor div{
-    width: 250px;
-    text-align: center;
-}
-.indoor img{
-    width: 100%;
-    border-radius:10px ;
-    max-width: 30vw;
-    border:  3px solid #000;
-    box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.3);
-    margin: 7px;
-}
-.indoor h4{
-    font-size: 19px ;
-    margin: 10px 0;
-}
-.indoor p{
-   
-    font-size: 14px;
-    line-height: 1.6em;
-   
-}
-.item{
-    display: flex;
-    background-color: aliceblue;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 60px 200px 60px;
-}
-.item div{
-    width: 250px;
-    text-align: center;
-}
-.item img{
-    width: 100%;
-    border-radius:10px ;
-    max-width: 30vw;
-    border:  3px solid #000;
-    box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.3);
-    margin: 7px;
-}
-.item h4{
-    font-size: 19px ;
-    margin: 10px 0;
-}
-.item p{
-   
-    font-size: 14px;
-    line-height: 1.6em;
-   
-}
-.item a{
-    color: rgb(43, 33, 33);
-    text-decoration: none;
-}
-.item a:hover{
-    text-decoration: underline;
-}
+
 .stand{
 
     background-color: rgb(255, 255, 255);
@@ -157,33 +75,124 @@ h2{
     bottom:0;  
 }
 
-@media screen and (max-width: 768px){
-   
-header h1{  
-    transform: translateX(33vw);
-}
-.back:hover {
-    background-color: #555;
-}
-.level img{
-    width: 100%;
-}
-.stand img{
-    width: 100%;
-}
-.item{
-    flex-direction:column ;
-    padding: 60px 125px;
-}
-.item div {
-    margin-bottom: 30px;
-}
-.indoor{
-    flex-direction:column ;
-    padding: 60px 125px;
-}
-.indoor div {
-    margin-bottom: 30px;
-}
+.section-title{
+    padding-top: 55px   ;
 }
 
+
+.store-card, .gym-card {
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.store-card:hover, .gym-card:hover {
+    transform: translateY(-5px);
+}
+
+.store-card img, .gym-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-body h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.card-body a {
+    text-decoration: none;
+    color: #333;
+}
+
+.card-body a:hover {
+    color: #007bff;
+}
+
+.club-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.club-section h4 {
+    margin-bottom: 20px;
+}
+
+.club-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.club-section a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        padding-top: 70px;
+        font-size: 1.5rem;
+    }
+    
+    .store-card img, .gym-card img {
+        height: 180px;
+    }
+}
+
+.content-section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.level-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.level-description {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.level-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    display: block;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding-top: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .level-title {
+        font-size: 1.5rem;
+    }
+    
+    .level-description {
+        font-size: 0.9rem;
+    }
+    
+    .level-image {
+        margin-top: 20px;
+    }
+}
