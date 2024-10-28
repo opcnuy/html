@@ -93,6 +93,9 @@ document.getElementById('messageForm').addEventListener('submit', function(event
 
         // 清空表單
         document.getElementById('messageForm').reset();
+        alert('留言成功！');
+            loadMessages();
+            
     }
 });
 

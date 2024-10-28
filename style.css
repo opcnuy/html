@@ -69,6 +69,21 @@ h2{
     border-radius: 4px;
     font-size: 16px;
 }
+.message-card {
+    transition: transform 0.2s;
+}
+.message-card:hover {
+    transform: translateY(-2px);
+}
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
 .video{
     float: right;
     position:fixed;
