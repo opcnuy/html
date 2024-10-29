@@ -1,23 +1,38 @@
 <!DOCTYPE html>
+<!-- 宣告文件類型為HTML -->
 <html lang="en">
+<!-- 開啟HTML網頁,語言設定為英文 -->
 <head>
+    <!-- 頭部區域開始 -->
     <meta charset="UTF-8"/>
+    <!-- 設定網頁編碼為UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 設定網頁viewport,使網頁在各裝置上都能正常顯示 -->
     <title>撲得了球卻撲不進妳心裡</title>
+    <!-- 網頁標題 -->
     <link rel="stylesheet" href="style.css">
+    <!-- 引入外部CSS樣式表 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- 引入Bootstrap CSS框架 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
+    <!-- 引入Bootstrap JavaScript框架 -->
 </head>
 <body>
-    <!-- 導覽列 -->
+    <!-- 頁面主體開始 -->
     <nav class="navbar navbar-light bg-light fixed-top">
+        <!-- 固定在頂部的導覽列,使用淺色主題 -->
         <div class="container-fluid">
+            <!-- 導覽列容器 -->
             <h1>排氣少年</h1>
+            <!-- 導覽列標題 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- 導覽列切換按鈕 -->
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- 導覽列內容區域,預設隱藏 -->
                 <ul class="navbar-nav ms-auto">
+                    <!-- 導覽列項目,靠右對齊 -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
@@ -32,10 +47,12 @@
         </div>
     </nav>
 
-    <!-- 主內容區域 -->
     <main class="container mt-5 pt-5">
+        <!-- 主內容區域,上下margin和上邊距 -->
         <div class="message-board">
+            <!-- 留言板區域 -->
             <form id="messageForm" class="mb-3">
+                <!-- 留言表單,下方margin -->
                 <div class="mb-3">
                     <label for="location" class="form-label">地點</label>
                     <input type="text" class="form-control" id="location" placeholder="輸入地點" required>
@@ -57,17 +74,18 @@
                 <button type="submit" class="btn btn-primary w-100">提交留言</button>
             </form>
 
-            <!-- 搜尋欄位 -->
             <div class="search-bar mb-3">
+                <!-- 搜尋欄位區域,下方margin -->
                 <input type="text" id="searchInput" class="form-control" placeholder="搜尋關鍵字" oninput="filterMessages()">
             </div>
 
             <div id="messageContainer" class="mt-4">
+                <!-- 留言內容區域,上方margin -->
                 <h3 class="text-center">留言內容</h3>
                 <ul class="list-group" id="messagesList"></ul>
                 
-                <!-- 分頁按鈕 -->
                 <div class="pagination-controls d-flex justify-content-between mt-3">
+                    <!-- 分頁控制按鈕區域,上方margin,水平置中 -->
                     <button class="btn btn-secondary" onclick="prevPage()" id="prevButton" disabled>上一頁</button>
                     <button class="btn btn-secondary" onclick="nextPage()" id="nextButton" disabled>下一頁</button>
                 </div>
@@ -75,15 +93,17 @@
         </div>
     </main>
 
-    <!-- 嵌入影片區域 -->
     <section class="container text-center mt-5">
+        <!-- 影片區域,上方margin,置中 -->
         <div class="video-container">
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/c66RN87YjNE" allowfullscreen></iframe>
         </div>
     </section>
 <script>
+    // 顯示施工中提示
     alert('施工中!!');
 </script>
     <script src="script.js"></script>
+    <!-- 引入自定義JavaScript腳本 -->
 </body>
 </html>
