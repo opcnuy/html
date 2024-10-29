@@ -23,12 +23,15 @@ function loadMessages() {
         return currentTime - messageObj.timestamp < 86400000;
     });
     // 保留 24 小時內的留言
-    
+
+    // 按照時間戳排序留言，從最新的時間開始
+    validMessages.sort((a, b) => b.timestamp - a.timestamp);
+
     // 更新 localStorage 中的有效留言
     localStorage.setItem('messages', JSON.stringify(validMessages));
     
-    // 設置過濾後的留言為最新留言在最前
-    filteredMessages = validMessages.reverse(); // 倒序排列，使最新留言在前
+    // 設置過濾後的留言
+    filteredMessages = validMessages;
     renderMessages();
 }
 
@@ -69,7 +72,7 @@ function displayMessage(location, message, suitable, timestamp) {
         <small>${formattedDate} ${formattedTime}</small>
     `;
     
-    messagesList.appendChild(messageItem); // 使用 appendChild，將最新留言顯示在頂端
+    messagesList.appendChild(messageItem);
 }
 
 // 搜尋並過濾留言
@@ -81,7 +84,7 @@ function filterMessages() {
         .filter(({ location, message }) => {
             return location.toLowerCase().includes(searchTerm) || message.toLowerCase().includes(searchTerm);
         })
-        .reverse(); // 保證最新留言在前
+        .sort((a, b) => b.timestamp - a.timestamp); // 保證最新留言在前
     
     currentPage = 1; // 重置到第一頁
     renderMessages();
