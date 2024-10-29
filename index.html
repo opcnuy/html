@@ -85,5 +85,80 @@
     alert('施工中!!');
 </script>
     <script src="script.js"></script>
+
+    <div class="container mt-5">
+        <h1>留言同步範例</h1>
+        <form id="messageForm">
+            <!-- 地點 -->
+            <label for="location">地點</label>
+            <input type="text" id="location" required class="form-control">
+            <!-- 留言 -->
+            <label for="message">留言</label>
+            <textarea id="message" required class="form-control"></textarea>
+            <!-- 是否適合打球選項 -->
+            <label for="suitable">是否適合打球？</label>
+            <select id="suitable" class="form-select" required>
+                <option value="" disabled selected>請選擇</option>
+                <option value="打到死">打到死</option>
+                <option value="在家睡">在家睡</option>
+                <option value="有人">有人</option>
+                <option value="沒人">沒人</option>
+            </select>
+            <!-- 提交按鈕 -->
+            <button type="submit" class="btn btn-primary mt-2">提交留言</button>
+        </form>
+        <!-- 留言顯示區域 -->
+        <ul id="messagesList" class="list-group mt-3"></ul>
+    </div>
+
+    <script>
+        // 建立WebSocket連接
+        const socket = new WebSocket('ws://localhost:8080');
+
+        // 留言列表
+        const messagesList = document.getElementById('messagesList');
+
+        // 初始化及接收訊息處理
+        socket.onmessage = (event) => {
+            const { type, data } = JSON.parse(event.data); // 解析從伺服器接收到的訊息
+
+            if (type === 'init') {
+                // 當伺服器初次連接時，載入現有留言
+                data.forEach(displayMessage); // 將留言顯示在畫面上
+            } else if (type === 'update') {
+                // 當有新留言時，顯示在畫面上
+                displayMessage(data);
+            }
+        };
+
+        // 顯示單則留言
+        function displayMessage({ location, message, suitable, timestamp }) {
+            const messageItem = document.createElement('li'); // 建立li元素
+            messageItem.classList.add('list-group-item'); // 套用Bootstrap樣式
+            messageItem.innerHTML = `
+                <em>${location}</em><br>
+                ${message} <br>
+                <span>是否適合打球: <strong>${suitable}</strong></span><br>
+                <small>${new Date(timestamp).toLocaleString()}</small>
+            `;
+            messagesList.prepend(messageItem); // 將新留言置於留言列表頂端
+        }
+
+        // 表單提交處理
+        document.getElementById('messageForm').addEventListener('submit', (event) => {
+            event.preventDefault(); // 阻止表單預設行為
+
+            const location = document.getElementById('location').value.trim(); // 取得地點
+            const message = document.getElementById('message').value.trim(); // 取得留言
+            const suitable = document.getElementById('suitable').value; // 是否適合打球
+            const timestamp = new Date().toISOString(); // 取得時間戳
+
+            // 將新留言傳送至WebSocket伺服器
+            const messageData = { location, message, suitable, timestamp };
+            socket.send(JSON.stringify({ type: 'newMessage', data: messageData })); // 傳送留言訊息
+
+            document.getElementById('messageForm').reset(); // 清空表單
+        });
+    </script>
 </body>
 </html>
