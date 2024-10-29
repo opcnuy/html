@@ -1,70 +1,77 @@
 <!DOCTYPE html>
-<!-- 宣告文件類型為HTML -->
+<!-- 宣告文件類型為 HTML5 -->
 <html lang="en">
-<!-- 開啟HTML網頁,語言設定為英文 -->
+<!-- HTML 文件的開始標籤，並設置語言為英文 -->
 <head>
-    <!-- 頭部區域開始 -->
+    <!-- 頭部開始 -->
     <meta charset="UTF-8"/>
-    <!-- 設定網頁編碼為UTF-8 -->
+    <!-- 設置網頁的編碼為 UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 設定網頁viewport,使網頁在各裝置上都能正常顯示 -->
+    <!-- 設定 viewport 使網頁能適應各種裝置的螢幕寬度 -->
     <title>撲得了球卻撲不進妳心裡</title>
-    <!-- 網頁標題 -->
+    <!-- 定義網頁標題 -->
+    
+    <!-- 引入外部 CSS 文件 -->
     <link rel="stylesheet" href="style.css">
-    <!-- 引入外部CSS樣式表 -->
+    <!-- 引入 Bootstrap 框架的 CSS 文件 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- 引入Bootstrap CSS框架 -->
+    <!-- 引入 Bootstrap 的 JavaScript 文件 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
-    <!-- 引入Bootstrap JavaScript框架 -->
 </head>
 <body>
-    <!-- 頁面主體開始 -->
+    <!-- 主體內容開始 -->
     <nav class="navbar navbar-light bg-light fixed-top">
-        <!-- 固定在頂部的導覽列,使用淺色主題 -->
+        <!-- 導覽列，使用淺色主題並固定在頂部 -->
         <div class="container-fluid">
-            <!-- 導覽列容器 -->
+            <!-- 導覽列容器，滿寬 -->
             <h1>排氣少年</h1>
-            <!-- 導覽列標題 -->
+            <!-- 網站標題 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <!-- 導覽列切換按鈕 -->
+                <!-- 導覽列切換按鈕，點擊後可以展開或摺疊導覽選項 -->
                 <span class="navbar-toggler-icon"></span>
+                <!-- 按鈕圖標 -->
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- 導覽列內容區域,預設隱藏 -->
+                <!-- 可摺疊的導覽列內容 -->
                 <ul class="navbar-nav ms-auto">
-                    <!-- 導覽列項目,靠右對齊 -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="其他資訊.html">Info</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="小常識.html">Know</a>
-                    </li>
+                    <!-- 導覽選單，使用 ms-auto 將選單靠右對齊 -->
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <!-- 第一個導覽項目，設為首頁 -->
+                    <li class="nav-item"><a class="nav-link" href="其他資訊.html">Info</a></li>
+                    <!-- 第二個導覽項目，連結至其他資訊頁面 -->
+                    <li class="nav-item"><a class="nav-link" href="小常識.html">Know</a></li>
+                    <!-- 第三個導覽項目，連結至小常識頁面 -->
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- 主內容區域 -->
     <main class="container mt-5 pt-5">
-        <!-- 主內容區域,上下margin和上邊距 -->
+        <!-- 使用 Bootstrap 容器設定和上邊距 -->
         <div class="message-board">
             <!-- 留言板區域 -->
             <form id="messageForm" class="mb-3">
-                <!-- 留言表單,下方margin -->
+                <!-- 留言表單，設置下方 margin -->
                 <div class="mb-3">
                     <label for="location" class="form-label">地點</label>
+                    <!-- 地點輸入框標籤 -->
                     <input type="text" class="form-control" id="location" placeholder="輸入地點" required>
+                    <!-- 地點輸入框，設置為必填 -->
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label">留言</label>
+                    <!-- 留言內容輸入框標籤 -->
                     <textarea class="form-control" id="message" rows="3" placeholder="輸入你的留言" required></textarea>
+                    <!-- 留言內容輸入框，設置為必填 -->
                 </div>
                 <div class="mb-3">
                     <label class="form-label">是否適合打球？</label>
+                    <!-- 是否適合打球的選擇框標籤 -->
                     <select id="suitable" class="form-select" required>
+                        <!-- 下拉選單 -->
                         <option value="" disabled selected>請選擇</option>
+                        <!-- 預設選項 -->
                         <option value="打到死">打到死</option>
                         <option value="在家睡">在家睡</option>
                         <option value="有人">有人</option>
@@ -72,38 +79,47 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">提交留言</button>
+                <!-- 表單提交按鈕，使用 Bootstrap 的樣式設定為藍色按鈕，並佔滿寬度 -->
             </form>
 
             <div class="search-bar mb-3">
-                <!-- 搜尋欄位區域,下方margin -->
+                <!-- 搜尋欄位，設置下方 margin -->
                 <input type="text" id="searchInput" class="form-control" placeholder="搜尋關鍵字" oninput="filterMessages()">
+                <!-- 搜尋輸入框，當用戶輸入時觸發 filterMessages() 函式 -->
             </div>
 
+            <!-- 留言顯示和分頁 -->
             <div id="messageContainer" class="mt-4">
-                <!-- 留言內容區域,上方margin -->
+                <!-- 留言顯示區域，設置上方 margin -->
                 <h3 class="text-center">留言內容</h3>
+                <!-- 留言區域標題，置中顯示 -->
                 <ul class="list-group" id="messagesList"></ul>
-                
+                <!-- 留言列表，使用 Bootstrap 的 list-group 樣式 -->
                 <div class="pagination-controls d-flex justify-content-between mt-3">
-                    <!-- 分頁控制按鈕區域,上方margin,水平置中 -->
+                    <!-- 分頁控制按鈕區域，左右對齊 -->
                     <button class="btn btn-secondary" onclick="prevPage()" id="prevButton" disabled>上一頁</button>
+                    <!-- 上一頁按鈕，預設為禁用 -->
                     <button class="btn btn-secondary" onclick="nextPage()" id="nextButton" disabled>下一頁</button>
+                    <!-- 下一頁按鈕，預設為禁用 -->
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- 影片嵌入區域 -->
     <section class="container text-center mt-5">
-        <!-- 影片區域,上方margin,置中 -->
+        <!-- 使用 Bootstrap 容器和上邊距設置，置中顯示 -->
         <div class="video-container">
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/c66RN87YjNE" allowfullscreen></iframe>
+            <!-- 嵌入 YouTube 影片，設置為全寬，支持全螢幕 -->
         </div>
     </section>
-<script>
-    // 顯示施工中提示
-    alert('施工中!!');
-</script>
+
+    <script>
+        // 提示施工中
+        alert('施工中!!');
+    </script>
     <script src="script.js"></script>
-    <!-- 引入自定義JavaScript腳本 -->
+    <!-- 引入自訂 JavaScript 文件 -->
 </body>
 </html>
