@@ -13,7 +13,7 @@ const messagesPerPage = 10;
 // 載入並顯示留言
 function loadMessages() {
     const messages = JSON.parse(localStorage.getItem('messages')) || [];
-    // 從 localStorage 獲取留言資訊,如果不存在則設為空陣列
+    // 從 localStorage 獲取留言資訊, 如果不存在則設為空陣列
     
     const currentTime = new Date().getTime();
     // 獲取當前時間的時間戳
@@ -27,8 +27,8 @@ function loadMessages() {
     // 更新 localStorage 中的有效留言
     localStorage.setItem('messages', JSON.stringify(validMessages));
     
-    // 設置過濾後的留言
-    filteredMessages = validMessages;
+    // 設置過濾後的留言為最新留言在最前
+    filteredMessages = validMessages.reverse(); // 倒序排列，使最新留言在前
     renderMessages();
 }
 
@@ -69,7 +69,7 @@ function displayMessage(location, message, suitable, timestamp) {
         <small>${formattedDate} ${formattedTime}</small>
     `;
     
-    messagesList.prepend(messageItem);
+    messagesList.appendChild(messageItem); // 使用 appendChild，將最新留言顯示在頂端
 }
 
 // 搜尋並過濾留言
@@ -77,9 +77,11 @@ function filterMessages() {
     const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
     const messages = JSON.parse(localStorage.getItem('messages')) || [];
     
-    filteredMessages = messages.filter(({ location, message }) => {
-        return location.toLowerCase().includes(searchTerm) || message.toLowerCase().includes(searchTerm);
-    });
+    filteredMessages = messages
+        .filter(({ location, message }) => {
+            return location.toLowerCase().includes(searchTerm) || message.toLowerCase().includes(searchTerm);
+        })
+        .reverse(); // 保證最新留言在前
     
     currentPage = 1; // 重置到第一頁
     renderMessages();
