@@ -1,33 +1,33 @@
-// 使用 Node.js 和 WebSocket 套件建立 WebSocket 伺服器
-const WebSocket = require('ws'); // 引入WebSocket模組
-const wss = new WebSocket.Server({ port: 8080 }); // 建立WebSocket伺服器並監聽8080埠
+// 引入 WebSocket 模組並建立伺服器
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
 
-let messages = []; // 全域變數儲存所有留言
+let messages = []; // 全部留言暫存在伺服器記憶體
 
-// 當有新使用者連接時觸發
+// 當新用戶連接時觸發
 wss.on('connection', (ws) => {
-    // 當前連線的使用者初始化時，傳送所有留言給該使用者
+    // 傳送現有的所有留言給新連接的使用者
     ws.send(JSON.stringify({ type: 'init', data: messages }));
 
-    // 接收使用者的新留言
+    // 當用戶端傳送新留言時觸發
     ws.on('message', (message) => {
-        const parsedMessage = JSON.parse(message); // 解析接收到的JSON訊息
+        const parsedMessage = JSON.parse(message);
 
-        // 若訊息為新留言，將其儲存並廣播給所有連線使用者
         if (parsedMessage.type === 'newMessage') {
-            messages.push(parsedMessage.data); // 儲存留言
-            broadcast(JSON.stringify({ type: 'update', data: parsedMessage.data })); // 廣播新留言
+            // 儲存新留言，並廣播給所有使用者
+            messages.push(parsedMessage.data);
+            broadcast(JSON.stringify({ type: 'update', data: parsedMessage.data }));
         }
     });
 });
 
-// 廣播函式：將新留言傳送給所有使用者
+// 廣播函式，將新留言發送給所有已連線的用戶
 function broadcast(data) {
     wss.clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {
-            client.send(data); // 傳送資料給所有連線使用者
+            client.send(data);
         }
     });
 }
 
-console.log('WebSocket server running on ws://localhost:8080');
+console.log('WebSocket server is running on ws://localhost:8080');
