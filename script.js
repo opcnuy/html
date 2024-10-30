@@ -87,11 +87,15 @@ function filterMessages() {
     // 從 localStorage 獲取留言數據
 
     filteredMessages = messages
-        .filter(({ location, message }) => {
-            return location.toLowerCase().includes(searchTerm) || message.toLowerCase().includes(searchTerm);
+        .filter(({ location, message, suitable }) => {
+            return (
+                location.toLowerCase().includes(searchTerm) ||
+                message.toLowerCase().includes(searchTerm) ||
+                suitable.toLowerCase().includes(searchTerm) // 將「是否適合打球」欄位納入搜尋範圍
+            );
         })
         .sort((a, b) => b.timestamp - a.timestamp);
-    // 過濾符合關鍵字的留言，並按照時間戳從最新到最舊排序
+    // 篩選留言，符合搜尋關鍵字的項目會被保留，並按時間戳排序最新的在前
 
     currentPage = 1;
     // 搜尋完成後重置到第一頁

@@ -1,247 +1,287 @@
-/* 全局樣式重置,清除預設的 padding 和 margin */
+/* 全局樣式重置, 清除預設的 padding 和 margin */
 * {
-    padding: 0;
-    margin: 0;
- }
- 
- /* 留言區塊容器樣式 */
- .message1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
- 
- /* 留言板主容器樣式 */
- .message-board {
-    width: 100%;
-    max-width: 600px;
- }
- 
- /* 頁面標題樣式 */
- h1 {
-    color: rgba(43, 33, 33);
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%); /* 使 H1 水平居中 */
-    margin: 0;
-    z-index: 1000; /* 確保在其他元素之上 */
- }
- 
- /* 知識區塊標題樣式 */
- h2 {
-    background-color: rgba(136, 136, 191, 0.303);
- }
- 
- /* 知識區塊容器樣式 */
- .knowledge {
-    background-color: rgb(227, 214, 197);
-    padding: 95px 20px 10px;
- }
- 
- /* 知識區塊中的連結樣式 */
- .knowledge a {
-    color: rgb(37, 26, 26);
-    text-decoration: none;
- }
- 
- /* 知識區塊中的連結 hover 樣式 */
- .knowledge a:hover {
-    text-decoration: underline;
- }
- 
- /* 站點區塊容器樣式 */
- .stand {
-    background-color: rgb(255, 255, 255);
-    padding: 0 30px 80px;
- }
- 
- /* 評級區塊容器樣式 */
- .level {
-    background-color: rgba(85, 100, 112,0.2);
-    padding: 80px 30px 80px;
- }
- 
- /* 搜索區塊容器樣式 */
- .search {
-    padding:170px 0 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
- 
- /* 搜索區塊中的按鈕樣式 */
- .search button {
-    padding: 8px 12px;
-    margin-left: 5px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
- }
- 
- /* 搜索區塊中的輸入框樣式 */
- .search input {
-    padding: 8px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
- }
- 
- /* 留言卡片容器的 hover 效果 */
- .message-card {
-    transition: transform 0.2s;
- }
- 
- .message-card:hover {
-    transform: translateY(-2px);
- }
- 
- /* 影片容器樣式 */
- .video-container {
-    max-width: 800px;
-    margin: 0 auto;
- }
- 
- /* 小螢幕設備的容器樣式 */
- @media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
- }
- 
- /* 影片元素樣式 */
- .video {
-    float: right;
-    position:fixed;
-    bottom:0;
- }
- 
- /* 章節標題樣式 */
- .section-title {
-    padding-top: 55px;
- }
- 
- /* 商店卡片和健身房卡片樣式 */
- .store-card, .gym-card {
-    margin-bottom: 20px;
-    transition: transform 0.3s;
- }
- 
- .store-card:hover, .gym-card:hover {
-    transform: translateY(-5px);
- }
- 
- .store-card img, .gym-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
- }
- 
- .card-body h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
- }
- 
- .card-body p {
-    color: #666;
-    font-size: 0.9rem;
- }
- 
- .card-body a {
-    text-decoration: none;
-    color: #333;
- }
- 
- .card-body a:hover {
-    color: #007bff;
- }
- 
- /* 俱樂部區塊樣式 */
- .club-section {
-    padding: 40px 0;
-    background-color: #f8f9fa;
- }
- 
- .club-section h4 {
-    margin-bottom: 20px;
- }
- 
- .club-section ul {
-    list-style: none;
-    padding-left: 0;
- }
- 
- .club-section a {
-    text-decoration: none;
-    color: #007bff;
- }
- 
- /* 小螢幕設備的樣式 */
- @media (max-width: 768px) {
-    .section-title {
-        padding-top: 70px;
-        font-size: 1.5rem;
-    }
- 
-    .store-card img, .gym-card img {
-        height: 180px;
-    }
- }
- 
- /* 內容區塊樣式 */
- .content-section {
-    padding-top: 80px;
-    padding-bottom: 40px;
- }
- 
- .level-title {
-    color: #333;
-    margin-bottom: 20px;
- }
- 
- .level-description {
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    max-width: 800px;
- }
- 
- .level-image {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 0 auto;
-    display: block;
- }
- 
- /* 導航欄標題樣式 */
- .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
- }
- 
- /* 小螢幕設備的樣式 */
- @media (max-width: 768px) {
-    .content-section {
-        padding-top: 70px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
- 
-    .level-title {
-        font-size: 1.5rem;
-    }
- 
-    .level-description {
-        font-size: 0.9rem;
-    }
- 
-    .level-image {
-        margin-top: 20px;
-    }
- }
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+/* 頁面背景設定 */
+body {
+   background-color: #f4f2ed; /* 柔和米色背景 */
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+   color: #3e3b32; /* 大地色文字 */
+}
+
+/* 留言區塊容器樣式 */
+.message1 {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+}
+
+/* 留言板主容器樣式 */
+.message-board {
+   width: 100%;
+   max-width: 600px;
+   border-radius: 12px;
+   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* 柔和陰影 */
+   background-color: #ffffff; /* 白色背景 */
+   padding: 15px;
+}
+
+/* 頁面標題樣式 */
+h1 {
+   color: #3b3b3b;
+   position: fixed;
+   left: 50%;
+   transform: translateX(-50%);
+   margin: 0;
+   padding: 10px 20px;
+   z-index: 1000;
+   background-color: rgba(229, 207, 188, 0.85); /* 淡綠色背景 */
+   color: #0b0808;
+   border-radius: 12px;
+   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 知識區塊標題樣式 */
+h2 {
+   background-color: rgba(136, 136, 191, 0.15);
+   padding: 8px 15px;
+   border-radius: 8px;
+}
+
+/* 知識區塊容器樣式 */
+.knowledge {
+   background-color: #e8e0c8; /* 大地色背景 */
+   padding: 95px 20px 10px;
+   border-radius: 12px;
+}
+
+/* 知識區塊中的連結樣式 */
+.knowledge a {
+   color: #3e3b32; /* 深棕色 */
+   text-decoration: none;
+}
+
+.knowledge a:hover {
+   text-decoration: underline;
+   color: #4f7942; /* 深綠色 */
+}
+
+/* 站點區塊容器樣式 */
+.stand {
+   background-color: #ffffff;
+   padding: 20px 30px;
+   border-radius: 8px;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 評級區塊容器樣式 */
+.level {
+   background-color: rgba(85, 100, 112, 0.2);
+   padding: 80px 30px;
+   border-radius: 12px;
+}
+
+/* 搜索區塊容器樣式 */
+.search {
+   padding: 170px 0 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* 搜索區塊中的按鈕樣式 */
+.search button {
+   padding: 8px 12px;
+   margin-left: 5px;
+   background-color: #4f7942; /* 深綠色 */
+   color: white;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+   transition: background-color 0.3s;
+}
+
+.search button:hover {
+   background-color: #357a38; /* 更深的綠色 */
+}
+
+/* 搜索區塊中的輸入框樣式 */
+.search input {
+   padding: 8px;
+   width: 250px;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   font-size: 16px;
+}
+
+/* 留言卡片容器的 hover 效果 */
+.message-card {
+   transition: transform 0.2s;
+}
+
+.message-card:hover {
+   transform: translateY(-2px);
+}
+
+/* 影片容器樣式 */
+.video-container {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+/* 小螢幕設備的容器樣式 */
+@media (max-width: 768px) {
+   .container {
+       padding: 0 15px;
+   }
+}
+
+/* 影片元素樣式 */
+.video {
+   float: right;
+   position: fixed;
+   bottom: 0;
+}
+
+/* 章節標題樣式 */
+.section-title {
+   padding-top: 55px;
+   font-size: 1.5rem;
+   color: #3e3b32;
+}
+
+/* 商店卡片和健身房卡片樣式 */
+.store-card, .gym-card {
+   margin-bottom: 20px;
+   transition: transform 0.3s;
+   border-radius: 10px;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.store-card:hover, .gym-card:hover {
+   transform: translateY(-5px);
+}
+
+.store-card img, .gym-card img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+   border-radius: 10px 10px 0 0;
+}
+
+.card-body h4 {
+   font-size: 1.2rem;
+   margin-bottom: 10px;
+   color: #3e3b32;
+}
+
+.card-body p {
+   color: #666;
+   font-size: 0.9rem;
+}
+
+.card-body a {
+   text-decoration: none;
+   color: #4f7942; /* 深綠色 */
+}
+
+.card-body a:hover {
+   color: #357a38; /* 更深的綠色 */
+}
+
+/* 俱樂部區塊樣式 */
+.club-section {
+   padding: 40px 0;
+   background-color: #f8f9fa;
+   border-radius: 8px;
+}
+
+.club-section h4 {
+   margin-bottom: 20px;
+   color: #3e3b32;
+}
+
+.club-section ul {
+   list-style: none;
+   padding-left: 0;
+}
+
+.club-section a {
+   text-decoration: none;
+   color: #007bff;
+}
+
+/* 小螢幕設備的樣式 */
+@media (max-width: 768px) {
+   .section-title {
+       padding-top: 70px;
+       font-size: 1.5rem;
+   }
+
+   .store-card img, .gym-card img {
+       height: 180px;
+   }
+}
+
+/* 內容區塊樣式 */
+.content-section {
+   padding-top: 80px;
+   padding-bottom: 40px;
+   background-color: #f4f2ed;
+   border-radius: 12px;
+}
+
+.level-title {
+   color: #3e3b32;
+   margin-bottom: 20px;
+}
+
+.level-description {
+   color: #666;
+   margin-bottom: 30px;
+   line-height: 1.6;
+   max-width: 800px;
+}
+
+/* iOS風格的陰影效果 */
+.level-image {
+   width: 100%;
+   max-width: 800px;
+   height: auto;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin: 0 auto;
+   display: block;
+}
+
+/* 導航欄標題樣式 */
+.navbar-brand {
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+/* 小螢幕設備的樣式 */
+@media (max-width: 768px) {
+   .content-section {
+       padding-top: 70px;
+       padding-left: 15px;
+       padding-right: 15px;
+   }
+
+   .level-title {
+       font-size: 1.5rem;
+   }
+
+   .level-description {
+       font-size: 0.9rem;
+   }
+
+   .level-image {
+       margin-top: 20px;
+   }
+}
