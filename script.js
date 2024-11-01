@@ -152,3 +152,20 @@ function prevPage() {
 
 // 初始化時載入留言
 loadMessages();
+
+function openModal() {
+    document.getElementById('imageModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('imageModal').classList.remove('show');
+    document.body.style.overflow = 'auto';
+}
+
+// 按 ESC 鍵關閉 Modal
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
